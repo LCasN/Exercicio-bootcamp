@@ -13,3 +13,4 @@ variable "project id" {
     default = "bootcamp-gcp-01-245236450"
 
 }
+
