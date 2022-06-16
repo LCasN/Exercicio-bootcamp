@@ -13,51 +13,18 @@ provider "google" {
   zone        = var.zone
 }
 
-module "instances" {
-  source     = "../modules/instances"
+module "folders-unit" {
+  source                = "../modules/folders"
+  name                  = "Redes"
+  short_name            = "Redes"
+  automation_project_id = ""
+  billing_account_id    = ""
+  organization_id       = ""
+  root_node             = "org/"
+  #prefix                = "unique-prefix"
+  environments          = {
+    dev = "Development",
+    prod = "Production"
+  }
+  service_account_keys  = false
 }
-
-module "storage" {
-  source     = "../modules/storage"
-}
-
-module "network" {
-  source     = "../modules/network"
-}
-
-resource "google_folder" "unidade-1" {
-    display_name = "Unidade-01"
-    parent =  "org/unidade1"
-
-}
-
-resource "google_folder" "dev1" {
-    display_name = "dev1"
-    parent = google_folder.unidade1.dev1
-
-}
-
-resource "google_folder" "prod1" {
-    display_name = "prod1"
-    parent = google_folder.unidade1.prod1
-
-}
-
-resource "google_folder" "unidade-2" {
-    display_name = "Unidade-02"
-    parent = "org/unidade2"
-
-}
-
-resource "google_folder" "dev2" {
-    display_name = "dev2"
-    parent = google_folder.unidade2.dev2
-
-}
-
-resource "google_folder" "prod2" {
-    display_name = "prod2"
-    parent = google_folder.unidade2.prod2
-
-}
-

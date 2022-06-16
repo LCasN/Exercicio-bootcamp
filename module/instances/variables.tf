@@ -10,6 +10,6 @@ variable "zone {
 
 variable "project id" {
     type = string
-    default = "bootcamp-gcp-01-245236450"
+    default = ""
 
 }
