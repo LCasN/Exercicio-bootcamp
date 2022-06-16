@@ -3,12 +3,12 @@ variable "region" {
     default = "us-central1"
 }
 
-variable "zone {
+variable "zone" {
     type = string
     default = "us-central1-a"
 }
 
-variable "project id" {
+variable "project_id" {
     type = string
     default = ""
 

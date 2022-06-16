@@ -14,7 +14,7 @@ provider "google" {
 }
 
 module "folders-unit" {
-  source                = "../modules/folders"
+  source                = "../module/folder"
   name                  = "Redes"
   short_name            = "Redes"
   automation_project_id = ""
